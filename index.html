@@ -1,18 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x600?text=Fragrance+Banner');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #b76e6e;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+
+        /* Categorias e Produtos */
+        .cards-grid,
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .card,
+        .produto-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover,
+        .produto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img,
+        .produto-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .preco {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #b76e6e;
+            margin: 15px 0;
+        }
+
+        .btn-comprar {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .diferenciais {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .lista-diferenciais {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .newsletter {
+            background: #f4f4f4;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .form-newsletter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .form-newsletter input {
+            padding: 12px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        .form-newsletter button {
+            padding: 12px 30px;
+            background: #b76e6e;
+            border: none;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <header>
 
         </header>
         <main>
-            <section>
-                
+            <section class="hero">
+                <div class="container">
+                    <h1>Descubra a Essência da Sua Personalidade</h1>
+                    <p>Uma jornada olfativa pelos perfumes mais icônicos e exclusivos do mundo.</p>
+                    <a href="#produtos" class="btn">Explorar Fragrâncias</a>
+                </div>
+            </section>
+
+            <!-- Seção de Categorias (Pirâmide Olfativa) -->
+            <section class="categorias" id="categorias">
+                <div class="container">
+                    <h2>Famílias Olfativas</h2>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200?text=Floral" alt="Fragrância Floral"
+                                loading="lazy">
+                            <h3>Floral</h3>
+                            <p>Romântico e delicado. Perfeito para o dia a dia e momentos especiais.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200?text=Amadeirado" alt="Fragrância Amadeirada"
+                                loading="lazy">
+                            <h3>Amadeirado</h3>
+                            <p>Sofisticação e força. Ideal para noites e clima frio.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200?text=Citrico" alt="Fragrância Cítrica"
+                                loading="lazy">
+                            <h3>Cítrico</h3>
+                            <p>Energia e frescor. Essencial para o verão e esportes.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x200?text=Oriental" alt="Fragrância Oriental"
+                                loading="lazy">
+                            <h3>Oriental</h3>
+                            <p>Envolvente e misterioso. Perfeito para ocasiões noturnas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de Produtos em Destaque -->
+            <section class="produtos" id="produtos">
+                <div class="container">
+                    <h2>Nossos Mais Vendidos</h2>
+                    <div class="produtos-grid">
+                        <!-- Produto 1 -->
+                        <article class="produto-card">
+                            <img src="https://via.placeholder.com/250x250?text=Perfume+1" alt="Essence Nocturne"
+                                loading="lazy">
+                            <h3>Essence Nocturne</h3>
+                            <p class="descricao">Um amadeirado oriental com notas de âmbar e baunilha.</p>
+                            <span class="preco">R$ 299,90</span>
+                            <button class="btn-comprar">Comprar</button>
+                        </article>
+
+                        <!-- Produto 2 -->
+                        <article class="produto-card">
+                            <img src="https://via.placeholder.com/250x250?text=Perfume+2" alt="Luz de Flora"
+                                loading="lazy">
+                            <h3>Luz de Flora</h3>
+                            <p class="descricao">Buquê floral com jasmim, rosa e um toque de almíscar.</p>
+                            <span class="preco">R$ 189,90</span>
+                            <button class="btn-comprar">Comprar</button>
+                        </article>
+
+                        <!-- Produto 3 -->
+                        <article class="produto-card">
+                            <img src="https://via.placeholder.com/250x250?text=Perfume+3" alt="Mar Mediterrâneo"
+                                loading="lazy">
+                            <h3>Mar Mediterrâneo</h3>
+                            <p class="descricao">Frescor aquático com limão siciliano e algas marinhas.</p>
+                            <span class="preco">R$ 159,90</span>
+                            <button class="btn-comprar">Comprar</button>
+                        </article>
+
+                        <!-- Produto 4 -->
+                        <article class="produto-card">
+                            <img src="https://via.placeholder.com/250x250?text=Perfume+4" alt="Café Noir"
+                                loading="lazy">
+                            <h3>Café Noir</h3>
+                            <p class="descricao">Intenso e marcante. Notas de café torrado e couro.</p>
+                            <span class="preco">R$ 349,90</span>
+                            <button class="btn-comprar">Comprar</button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Sobre Nós / Diferenciais -->
+            <section class="diferenciais">
+                <div class="container">
+                    <h2>Por que escolher nossa perfumaria?</h2>
+                    <ul class="lista-diferenciais">
+                        <li>✨ Produtos 100% originais com garantia</li>
+                        <li>🚚 Entrega rápida para todo o Brasil</li>
+                        <li>🎁 Amostras grátis em compras acima de R$200</li>
+                        <li>💳 Parcelamento em até 6x sem juros</li>
+                        <li>📦 Teste grátis por 7 dias (devolução fácil)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção de Newsletter -->
+            <section class="newsletter">
+                <div class="container">
+                    <h2>Receba novidades e ofertas exclusivas</h2>
+                    <form action="#" method="post" class="form-newsletter">
+                        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit">Assinar</button>
+                    </form>
+                    <p>Não enviamos spam. Você pode cancelar a qualquer momento.</p>
+                </div>
             </section>
         </main>
         <footer>
@@ -20,4 +276,5 @@
         </footer>
     </div>
 </body>
+
 </html>
